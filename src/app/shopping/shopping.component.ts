@@ -16,7 +16,7 @@ export class ShoppingComponent implements OnInit {
   }
 
   asignarMenuActivo(id:any){
-    debugger;
+    //debugger;
     this.menuActivo = id;
   }
 

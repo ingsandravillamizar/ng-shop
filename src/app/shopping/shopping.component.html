@@ -1,8 +1,9 @@
 <app-navbar (cambioMenu)="asignarMenuActivo($event)"></app-navbar>
+
 <div class="container" [ngSwitch]="menuActivo">
-      <app-inicio *ngSwitchCase="1"></app-inicio>
+    <router-outlet></router-outlet>
+    <!-- <app-inicio *ngSwitchCase="1"></app-inicio>
     <app-tienda *ngSwitchCase="2"></app-tienda>
     <app-nosotros *ngSwitchCase="3"></app-nosotros>
-    <app-contacto *ngSwitchCase="4"></app-contacto>
+    <app-contactanos *ngSwitchCase="4"></app-contactanos> -->
 </div>
-
