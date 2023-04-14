@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,18 +9,26 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   @Output() cambioMenu = new EventEmitter();
   navItems = [
-    {id:1,nombre:"Inicio",link:"inicio",active:false,disabled:false},
-    {id:2,nombre:"Tienda",link:"tienda",active:false,disabled:false},
-    {id:3,nombre:"Nosotros",link:"nosotros",active:false,disabled:false},
-    {id:4,nombre:"Contactanos",link:"contactanos",active:false,disabled:false}
+    {id:1,nombre:"Inicio",link:"inicio",disabled:false},
+    {id:2,nombre:"Tienda",link:"tienda",disabled:false},
+    {id:3,nombre:"Nosotros",link:"nosotros",disabled:false},
+    {id:4,nombre:"Contactanos",link:"contactanos",disabled:false}
   ];
-  constructor(private router : Router) { }
+  constructor(private router : Router,
+              private activedRoute: ActivatedRoute) {
+
+               }
 
   cambiarMenu(link:string){
     //debugger;
     this.router.navigate([`shopping/${link}`]);
   }
 
+
+  // esRutaActiva(ruta:string){
+  //   const esActiva = this.activedRoute.root.firstChild;
+
+  // }
 
 
 }
