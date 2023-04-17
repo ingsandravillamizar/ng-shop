@@ -19,6 +19,7 @@
           *ngFor="let navItem of navItems; let i = index"
           [ngClass]="{  disabled: navItem.disabled }"
           [routerLinkActive]="'active'"
+
           [routerLink]="navItem.link"
 
         >

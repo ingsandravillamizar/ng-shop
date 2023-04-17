@@ -11,6 +11,7 @@ import { TiendaComponent } from './shopping/tienda/tienda.component';
 import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
 import { ContactoComponent } from './shopping/contacto/contacto.component';
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
+import { DataEjemploService } from './shared/service/data-ejemplo.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataEjemploService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

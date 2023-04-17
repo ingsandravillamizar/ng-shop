@@ -1,2 +1,41 @@
-<h1>{{ paramPorRuta }}</h1>
-<p>tienda works!</p>
+
+
+<div class="row">
+  <div class="col-md-3">
+    <h1>Filtro de Busqueda</h1>
+  </div>
+
+
+  <div class="col-md-9">
+
+    <div class="row" *ngFor="let pr  of productosArray;let i = index">
+      <!-- <app-tarjeta [producto]="producto"></app-tarjeta> -->
+      <div class="row">
+        <div class="card mb-3" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <!-- <img src="https://fastly.4sqi.net/img/general/600x600/398961212_JT8UPQLoBAJ21T01XX1wwfscJO7F5cJIlQlJDcbai6U.jpg"class="img-fluid rounded-start" alt="..."> -->
+              <img src= {{pr.image}} class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"> {{pr.title}}</h5>
+                <p class="card-text">{{pr.description}}</p>
+                <p class="card-text"><small class="text-body-secondary">${{pr.price}}</small></p>
+                <a href="#" class="btn btn-primary">🛒</a>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</div>
+
