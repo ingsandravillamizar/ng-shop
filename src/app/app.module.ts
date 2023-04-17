@@ -12,6 +12,7 @@ import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
 import { ContactoComponent } from './shopping/contacto/contacto.component';
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { DataEjemploService } from './shared/service/data-ejemplo.service';
+import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DataEjemploService } from './shared/service/data-ejemplo.service';
     TiendaComponent,
     NosotrosComponent,
     ContactoComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TarjetaComponent
   ],
   imports: [
     BrowserModule,
