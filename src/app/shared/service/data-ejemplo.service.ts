@@ -10,8 +10,8 @@ export class DataEjemploService {
   //los Services son aquellas clases que nos permiten obtener, gestionar , manipular informacion para hacer nuestra programacion mas modular...
   //Ya sea mediante APIS, Cache, o transformaciones en el mismo service
   private apiUrl = "https://fakestoreapi.com/"
-  // private http: HttpClient
-  constructor( ) { }
+
+  constructor( private http: HttpClient) { }
 
 
   obtenerArticulosArray(){ //Metodo sin http para pruebitas y diseño
@@ -38,9 +38,13 @@ export class DataEjemploService {
     return productos;
   }
 
-  // obtenerArticulos():Observable<Product[]>{
-  //   return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=2');
-  // }
+  obtenerArticulos():Observable<Product[]>{
+   // return this.http.get<Product[]>('http://localhost:3000/products');
+    return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=2');
+
+
+
+  }
 
   obtenerArticulo(){
     //Futuramente llamara a pikachu;

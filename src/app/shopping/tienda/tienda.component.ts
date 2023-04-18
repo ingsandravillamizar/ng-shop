@@ -16,11 +16,24 @@ export class TiendaComponent implements OnInit {
 
 constructor(private route:ActivatedRoute , private dataEjemploService: DataEjemploService){}
 
-ngOnInit(): void {
-  this.productosArray = this.dataEjemploService.obtenerArticulosArray();
-  console.log(this.productosArray);
 
+
+//Para lecutra de Array manual
+//ngOnInit(): void {
+  //this.productosArray = this.dataEjemploService.obtenerArticulosArray();
+  //console.log(this.productosArray);
+//};
+
+
+ngOnInit(): void {
+
+  this.dataEjemploService.obtenerArticulos().subscribe(
+    (data)=>{
+      this.productosArray = data;
+    }
+  );
 };
+
 
 }
 

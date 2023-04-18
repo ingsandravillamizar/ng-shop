@@ -13,6 +13,7 @@ import { ContactoComponent } from './shopping/contacto/contacto.component';
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { DataEjemploService } from './shared/service/data-ejemplo.service';
 import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [DataEjemploService],
   bootstrap: [AppComponent]
