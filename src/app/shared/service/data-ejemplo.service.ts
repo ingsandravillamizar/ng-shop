@@ -40,8 +40,8 @@ export class DataEjemploService {
 
   obtenerArticulos():Observable<Product[]>{
    // return this.http.get<Product[]>('http://localhost:3000/products');
-    return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=2');
-
+    //return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=2');
+    return this.http.get<Product[]>('https://fakestoreapi.com/products?limit=1');
 
 
   }

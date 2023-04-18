@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/shared/model/product.model';
-import { DataEjemploService } from 'src/app/shared/service/data-ejemplo.service';
+//import { DataEjemploService } from 'src/app/shared/service/data-ejemplo.service';
+
+
+// Para api Pos
+import { Producto } from 'src/app/shared/model/producto.model';
+import { ProductoService} from 'src/app/shared/service/producto.service';
+import { ProductosService } from 'src/app/shared/service/productos.service';
+
 
 @Component({
   selector: 'app-tienda',
@@ -12,48 +19,34 @@ export class TiendaComponent implements OnInit {
 
   paramPorRuta : any;
   productosArray : Product[] = [];
+  productosPos   : Producto[] = [];
+
+  limite:string ="";
+
+constructor(private route:ActivatedRoute ,
+            //private dataEjemploService: DataEjemploService,
+            private productoService: ProductoService,
+            private _productosService: ProductosService){}
 
 
-constructor(private route:ActivatedRoute , private dataEjemploService: DataEjemploService){}
+            ngOnInit(): void {
+              //this.productos = this.dataEjemploService.obtenerArticulos();
+              this._productosService.obtenerProductos().subscribe(
+                (data)=>{
+                  this.productosPos = data;
+                  console.log("AQUI",  this.productosPos);
+                },
+              );
+            }
 
-
-
-//Para lecutra de Array manual
-//ngOnInit(): void {
-  //this.productosArray = this.dataEjemploService.obtenerArticulosArray();
-  //console.log(this.productosArray);
-//};
-
-
-ngOnInit(): void {
-
-  this.dataEjemploService.obtenerArticulos().subscribe(
-    (data)=>{
-      this.productosArray = data;
-    }
-  );
-};
-
-
-}
-
-
-
-
-
-//Despues se revisa esto..
-
-// gOnInit(): void {
-//   this.route.paramMap.subscribe((params)=>{
-//    //debugger;
-//    this.paramPorRuta = params.get('id');
-//     // const param = +params.get('id')!;
-//     // console.log(param);
-//       });
-
-// }
-
-
+            buscarFiltrado(){
+              this._productosService.obtenerProductosFiltrado(this.limite).subscribe(
+                (data)=>{
+                  this.productosArray = data;
+                },
+              );
+            }
+          }
 
 //Notas
 

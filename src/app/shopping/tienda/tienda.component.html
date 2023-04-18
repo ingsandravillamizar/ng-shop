@@ -8,9 +8,9 @@
 
   <div class="col-md-9">
 
-    <div class="row" *ngFor="let prod  of productosArray;let i = index">
-     <app-tarjeta [prodTarjeta]="prod"></app-tarjeta>
-
+    <div class="row" *ngFor="let prod  of productosPos;let i = index">
+     <!-- <app-tarjeta [prodTarjeta]="prod"></app-tarjeta> -->
+     <app-tarjeta [prodTarjetaPos]="prod"></app-tarjeta>
     </div>
 
 
