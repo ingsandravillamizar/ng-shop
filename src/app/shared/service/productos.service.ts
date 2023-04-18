@@ -20,9 +20,9 @@ export class ProductosService {
   ) { }
 
   obtenerProductos(){ //getProducts
-    console.log("Hola me ejecute");
-    //return this.http.get<Product[]>(`${this.apiUrl}products`);
-    return this.http.get<Producto[]>(`${this.apiUrlPos}products`);
+    //console.log("Hola me ejecute");
+    return this.http.get<Product[]>(`${this.apiUrl}products`);
+    //return this.http.get<Producto[]>(`${this.apiUrlPos}products`);
     console.log((`${this.apiUrlPos}products`));
   }
 

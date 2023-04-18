@@ -33,8 +33,8 @@ constructor(private route:ActivatedRoute ,
               //this.productos = this.dataEjemploService.obtenerArticulos();
               this._productosService.obtenerProductos().subscribe(
                 (data)=>{
-                  this.productosPos = data;
-                  console.log("AQUI",  this.productosPos);
+                  this.productosArray = data;
+                 // console.log("AQUI",  this.productosPos);
                 },
               );
             }

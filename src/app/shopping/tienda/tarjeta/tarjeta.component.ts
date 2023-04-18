@@ -14,8 +14,8 @@ import { ProductoService} from 'src/app/shared/service/producto.service';
 })
 export class TarjetaComponent {
 
-  //@Input() prodTarjeta  : Product = new Product();
-  @Input() prodTarjetaPos  : Producto = new Producto();
+  @Input() prodTarjeta  : Product = new Product();
+  //@Input() prodTarjetaPos  : Producto = new Producto();
 
 
 }
