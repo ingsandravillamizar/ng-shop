@@ -5,6 +5,7 @@ import { NotFoundComponent } from './shared/component/not-found/not-found.compon
 import { ContactoComponent } from './shopping/contacto/contacto.component';
 import { InicioComponent } from './shopping/inicio/inicio.component';
 import { NosotrosComponent } from './shopping/nosotros/nosotros.component';
+import { ProductoComponent } from './shopping/producto/producto.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { TiendaComponent } from './shopping/tienda/tienda.component';
 
@@ -19,11 +20,12 @@ const routes: Routes = [
     path: '',
     component: ShoppingComponent,
     children: [
-      { path: 'tienda/:id', component: TiendaComponent },
+      { path: 'producto/:id', component: ProductoComponent },
       { path: 'inicio', component: InicioComponent },
       { path: 'tienda', component: TiendaComponent },
       { path: 'nosotros', component: NosotrosComponent },
       { path: 'contactanos', component: ContactoComponent },
+      { path: 'producto', component: ProductoComponent },
     ],
   },
   { path: 'clase', component: ClaseComponent },

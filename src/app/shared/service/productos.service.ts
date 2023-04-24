@@ -19,15 +19,48 @@ export class ProductosService {
     private http: HttpClient
   ) { }
 
-  obtenerProductos(){ //getProducts
+  // obtenerProductos(limitante?: string){ //getProducts ReadAll
+  //   //console.log("Hola me ejecute");
+  //   let param ="";
+  //   if(limitante!=""){
+  //     param=`?limit=${limitante}`;
+  //   }
+  //   return this.http.get<Product[]>(`${this.apiUrl}products${param}`);
+  // }
+
+
+  obtenerProductos(limitante?: string, categoria?:string){ //getProducts ReadAll
     //console.log("Hola me ejecute");
-    return this.http.get<Product[]>(`${this.apiUrl}products`);
-    //return this.http.get<Producto[]>(`${this.apiUrlPos}products`);
-    console.log((`${this.apiUrlPos}products`));
+    let param ="";
+    if(limitante!=""){
+      param=`?limit=${limitante}`;
+    }
+
+    if(categoria!=""){
+      categoria = '/category/'+categoria;
+    }
+
+    return this.http.get<Product[]>(`${this.apiUrl}products${categoria}${param}`);
   }
 
-  obtenerProductosFiltrado(limitante: string){ //getProducts
-    //console.log("Hola me ejecute");
-    return this.http.get<Product[]>(`${this.apiUrl}products?limit=${limitante}`);
+
+
+  obtenerProducto(id:number){ //getProduct Read
+    return this.http.get<Product>(`${this.apiUrl}products/${id}`);
   }
+
+
+  guardarProducto(producto:Product){ //createProducts Create
+    return this.http.post<Product>(`${this.apiUrl}products`,producto);
+  }
+
+  actualizarProducto(producto: Producto){
+    return this.http.put<Producto>(`${this.apiUrl}products/${producto.id}`,producto);
+  }
+
+  eliminarProducto(id:number){
+    return this.http.delete<Producto>(`${this.apiUrl}products/${id}`);
+  }
+
+
 }

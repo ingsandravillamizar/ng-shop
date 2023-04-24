@@ -16,6 +16,9 @@ import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductosService } from './shared/service/productos.service';
 import { ProductoService } from './shared/service/producto.service';
+import { FormsModule } from '@angular/forms';
+import { ProductoComponent } from './shopping/producto/producto.component';
+import { CategoriasService } from './shared/service/categoria.service';
 
 @NgModule({
   declarations: [
@@ -28,15 +31,17 @@ import { ProductoService } from './shared/service/producto.service';
     NosotrosComponent,
     ContactoComponent,
     NotFoundComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   // Es el que conecta a pos api : ProductoService
-  providers: [DataEjemploService, ProductosService, ProductoService],
+  providers: [DataEjemploService, ProductosService, ProductoService,CategoriasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

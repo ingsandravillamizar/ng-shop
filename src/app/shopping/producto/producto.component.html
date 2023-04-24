@@ -1,0 +1,62 @@
+<div class="row text-center">
+  <h1>Producto</h1>
+</div>
+<!-- Template Form -->
+<!-- son aquellos formularios hacen uso del ngModel y son ideales para formularios muy sencillos -->
+
+<div class="row">
+  <div class="mb-3">
+    <label for="title" class="form-label">Nombre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      [(ngModel)]="producto.title"
+      placeholder="Inserte el nombre del producto"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input
+      type="number"
+      class="form-control"
+      id="price"
+      name="price"
+      [(ngModel)]="producto.price"
+      placeholder="Inserte el nombre del producto"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="categorias">Categorias:</label>
+    <select [(ngModel)]="producto.category" id="categorias" class="form-select">
+      <option selected [value]="''">- Seleciones Una Categoria -</option>
+      <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label"
+      >Descripción</label
+    >
+    <textarea
+      class="form-control"
+      id="description"
+      rows="3"
+      name="description"
+      [(ngModel)]="producto.description"
+    ></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <button class="btn btn-light mb-3 w-100" [routerLink]="'/tienda'">
+      Cancelar
+    </button>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-success mb-3 w-100" (click)="guardarProducto()">Guardar</button>
+  </div>
+</div>

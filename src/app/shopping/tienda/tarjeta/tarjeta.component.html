@@ -7,13 +7,21 @@
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title"> {{prodTarjeta.title}}</h5>
+          <h5 class="card-subtitle"> {{prodTarjeta.category}}</h5>
+
           <p class="card-text">{{prodTarjeta.description}}</p>
           <p class="card-text"><small class="text-body-secondary">${{prodTarjeta.price}}</small></p>
-          <a href="#" class="btn btn-primary">🛒</a>
+          <div class="row">
+            <a class="btn btn-primary mb-3">🛒</a>
+            <a class="btn btn-light mb-3"  [routerLink]="'/producto/'+prodTarjeta.id">Editar</a>
+            <a class="btn btn-danger mb-3" (click)="eliminarProducto(prodTarjeta.id)">Eliminar</a>
+        </div>
         </div>
       </div>
     </div>
   </div>
+
+
 
 
    <!--<div class="card mb-3" >
