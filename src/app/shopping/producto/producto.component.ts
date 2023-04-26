@@ -67,6 +67,10 @@ export class ProductoComponent implements OnInit {
         (res)=>{
           console.log(res);
           this.router.navigateByUrl('/tienda');
+        },
+        (error)=>{
+          debugger;
+          alert(error.message);
         }
       );
     }else{
@@ -74,6 +78,10 @@ export class ProductoComponent implements OnInit {
         (res)=>{
           console.log(res);
           this.router.navigateByUrl('/tienda');
+        },
+        (error)=>{
+          debugger;
+          alert(error.message);
         }
       );
     }
