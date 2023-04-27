@@ -16,7 +16,7 @@ import { TarjetaComponent } from './shopping/tienda/tarjeta/tarjeta.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductosService } from './shared/service/productos.service';
 import { ProductoService } from './shared/service/producto.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoComponent } from './shopping/producto/producto.component';
 import { CategoriasService } from './shared/service/categoria.service';
 
@@ -37,8 +37,10 @@ import { CategoriasService } from './shared/service/categoria.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   // Es el que conecta a pos api : ProductoService
   providers: [DataEjemploService, ProductosService, ProductoService,CategoriasService],

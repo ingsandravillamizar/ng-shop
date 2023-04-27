@@ -1,1 +1,29 @@
-<p>contacto works!</p>
+<div class="row text-center">
+  <h1>Contacto</h1>
+</div>
+<hr />
+<!-- formularios reactivos -->
+<div class="row">
+    <form [formGroup]="myForm" (ngSubmit)="enviar()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Inserte su nombre" formControlName="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" placeholder="Inserte un correo" formControlName="email">
+            <div class="text-danger" *ngIf="this.myForm.get('email')?.status == 'INVALID' && this.myForm.get('email')?.touched ">
+                Por favor pon un correo válido!
+              </div>
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Inserte un telefono" formControlName="telefono">
+        </div>
+        <div class="mb-3">
+            <label for="motivo" class="form-label">Como podemos servirte?</label>
+            <textarea class="form-control" id="motivo" rows="3" formControlName="motivo"></textarea>
+        </div>
+        <button class="btn btn-primary w-100" [disabled]="myForm.status =='INVALID'" type="submit">Enviar</button>
+    </form>
+</div>
